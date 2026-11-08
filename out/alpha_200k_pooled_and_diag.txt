@@ -1,0 +1,20 @@
+== generated-sample diagnostics at 200k (mean over seeds 110-119)
+alpha 0.99                 end rate 0.0450  reward [0.43, 1.85]
+alpha 0.9                  end rate 0.0347  reward [0.29, 1.76]
+alpha 0.5                  end rate 0.0451  reward [-0.15, 2.07]
+alpha 0.1                  end rate 0.0193  reward [-0.97, 2.98]
+alpha 0.01                 end rate 0.0216  reward [-1.73, 3.55]
+exact                      end rate 0.0072  reward [0.99, 1.01]
+alpha 0.9, Bernoulli end   end rate 0.0565  reward [0.15, 1.89]
+exact, Bernoulli end       end rate 0.0102  reward [0.99, 1.01]
+
+== pooled over both runs (seeds 100-119, 20 seeds), paired by seed
+md-fixed-diag - fifo-310 [curve]: +0.4 [-26.0, +26.2], won 10/20
+md-fixed-diag - fifo-310 [late]: -63.0 [-100.9, -26.9], won 6/20
+md-exact-diag - md-fixed-diag [curve]: -44.6 [-81.3, -6.9], won 5/20
+md-exact-diag - md-fixed-diag [late]: -47.3 [-96.1, +4.4], won 6/20
+md-exact-diag - fifo-310 [curve]: -44.2 [-74.1, -14.6], won 5/20
+md-exact-diag - fifo-310 [late]: -110.4 [-160.5, -59.9], won 2/20
+md-fixed-diag whole-run mean, seeds 100-109 / 110-119: 332.6 / 285.2
+md-exact-diag whole-run mean, seeds 100-109 / 110-119: 246.4 / 282.1
+fifo-310 whole-run mean, seeds 100-109 / 110-119: 316.8 / 300.2

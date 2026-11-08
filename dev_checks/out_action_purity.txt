@@ -1,0 +1,2 @@
+N=10000 episodes=456: units used 99/100, action purity 0.980, share in units with >20% minority action 0.048
+N=60000 episodes=2701: units used 99/100, action purity 0.979, share in units with >20% minority action 0.061

@@ -1,0 +1,5 @@
+t= 1 raw m=0.900, code's corrected m=9.000, correct-factor m=1.000; var(code)=9.000 (true 0)
+t= 2 raw m=0.990, code's corrected m=5.211, correct-factor m=1.000; var(code)=0.521 (true 0)
+t= 3 raw m=0.999, code's corrected m=3.686, correct-factor m=1.000; var(code)=0.037 (true 0)
+t= 5 raw m=1.000, code's corrected m=2.442, correct-factor m=1.000; var(code)=0.000 (true 0)
+t=20 raw m=1.000, code's corrected m=1.138, correct-factor m=1.000; var(code)=0.000 (true 0)

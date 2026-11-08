@@ -1,0 +1,5 @@
+defaults identical
+{'averaging': 'exact'} identical
+{'covariance': 'full'} identical
+{'correction': 'buggy'} identical
+{'unit_choice': 'count'} identical

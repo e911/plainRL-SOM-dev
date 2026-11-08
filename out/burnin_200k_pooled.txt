@@ -1,0 +1,11 @@
+== exact + Bernoulli endings vs FIFO 310, pooled over Studies 2-4 (seeds 110-159, 50 seeds)
+curve  : +31.6 [+13.7, +48.7], won 39/50
+late   : +16.4 [-15.5, +47.7], won 28/50
+5000   : -87.8 [-103.8, -72.5], won 3/50
+10000  : -16.3 [-49.8, +20.1], won 15/50
+25000  : +68.7 [+24.8, +114.2], won 31/50
+50000  : +117.9 [+68.1, +167.8], won 36/50
+100000 : +52.7 [-7.6, +111.8], won 25/50
+200000 : -9.2 [-48.3, +29.3], won 11/50
+exact-bern whole-run mean over 50 seeds: 325.8 late: 417.1
+fifo-310 whole-run mean over 50 seeds: 294.2 late: 400.7

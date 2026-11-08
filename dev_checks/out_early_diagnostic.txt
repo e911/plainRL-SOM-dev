@@ -1,0 +1,63 @@
+/home/pujan/.virtualenvs/rlsom/lib/python3.12/site-packages/gymnasium/envs/classic_control/cartpole.py:215: UserWarning: [33mWARN: You are calling 'step()' even though this environment has already returned terminated = True. You should always call 'reset()' once you receive 'terminated = True' -- any further steps are undefined behavior.[0m
+  logger.warn(
+md-fixed-diag        seed 997 step   1000 ep   46 | return    9.2 | phys err 0.0164 | units  79 | units <5 hits 0.28 <20 hits 0.77 | drift 0.852 | end gen 0.068 real 0.046
+/home/pujan/.virtualenvs/rlsom/lib/python3.12/site-packages/gymnasium/envs/classic_control/cartpole.py:215: UserWarning: [33mWARN: You are calling 'step()' even though this environment has already returned terminated = True. You should always call 'reset()' once you receive 'terminated = True' -- any further steps are undefined behavior.[0m
+  logger.warn(
+/home/pujan/.virtualenvs/rlsom/lib/python3.12/site-packages/gymnasium/envs/classic_control/cartpole.py:215: UserWarning: [33mWARN: You are calling 'step()' even though this environment has already returned terminated = True. You should always call 'reset()' once you receive 'terminated = True' -- any further steps are undefined behavior.[0m
+  logger.warn(
+md-exact-diag        seed 999 step   1000 ep   42 | return    9.3 | phys err 0.0126 | units  83 | units <5 hits 0.36 <20 hits 0.77 | drift 1.161 | end gen 0.033 real 0.042
+/home/pujan/.virtualenvs/rlsom/lib/python3.12/site-packages/gymnasium/envs/classic_control/cartpole.py:215: UserWarning: [33mWARN: You are calling 'step()' even though this environment has already returned terminated = True. You should always call 'reset()' once you receive 'terminated = True' -- any further steps are undefined behavior.[0m
+  logger.warn(
+md-fixed-diag        seed 999 step   1000 ep   41 | return   10.7 | phys err 0.0277 | units  80 | units <5 hits 0.35 <20 hits 0.79 | drift 1.320 | end gen 0.053 real 0.041
+/home/pujan/.virtualenvs/rlsom/lib/python3.12/site-packages/gymnasium/envs/classic_control/cartpole.py:215: UserWarning: [33mWARN: You are calling 'step()' even though this environment has already returned terminated = True. You should always call 'reset()' once you receive 'terminated = True' -- any further steps are undefined behavior.[0m
+  logger.warn(
+/home/pujan/.virtualenvs/rlsom/lib/python3.12/site-packages/gymnasium/envs/classic_control/cartpole.py:215: UserWarning: [33mWARN: You are calling 'step()' even though this environment has already returned terminated = True. You should always call 'reset()' once you receive 'terminated = True' -- any further steps are undefined behavior.[0m
+  logger.warn(
+md-fixed-diag        seed 998 step   1000 ep   40 | return   12.0 | phys err 0.0200 | units  82 | units <5 hits 0.28 <20 hits 0.73 | drift 2.290 | end gen 0.046 real 0.040
+md-exact-diag-bern   seed 997 step   1000 ep   49 | return    9.2 | phys err 0.0102 | units  78 | units <5 hits 0.23 <20 hits 0.74 | drift 0.708 | end gen 0.050 real 0.049
+md-exact-diag        seed 998 step   1000 ep   35 | return   44.0 | phys err 0.0172 | units  84 | units <5 hits 0.36 <20 hits 0.79 | drift 1.024 | end gen 0.019 real 0.035
+/home/pujan/.virtualenvs/rlsom/lib/python3.12/site-packages/gymnasium/envs/classic_control/cartpole.py:215: UserWarning: [33mWARN: You are calling 'step()' even though this environment has already returned terminated = True. You should always call 'reset()' once you receive 'terminated = True' -- any further steps are undefined behavior.[0m
+  logger.warn(
+md-exact-diag-bern   seed 999 step   1000 ep   47 | return    9.3 | phys err 0.0135 | units  82 | units <5 hits 0.38 <20 hits 0.74 | drift 0.994 | end gen 0.046 real 0.047
+/home/pujan/.virtualenvs/rlsom/lib/python3.12/site-packages/gymnasium/envs/classic_control/cartpole.py:215: UserWarning: [33mWARN: You are calling 'step()' even though this environment has already returned terminated = True. You should always call 'reset()' once you receive 'terminated = True' -- any further steps are undefined behavior.[0m
+  logger.warn(
+md-exact-diag        seed 997 step   1000 ep   48 | return    9.2 | phys err 0.0096 | units  78 | units <5 hits 0.29 <20 hits 0.73 | drift 0.870 | end gen 0.048 real 0.048
+md-fixed-diag        seed 997 step   2000 ep   96 | return   19.3 | phys err 0.0152 | units  84 | units <5 hits 0.17 <20 hits 0.52 | drift 0.749 | end gen 0.083 real 0.048
+md-fixed-diag        seed 999 step   2000 ep   80 | return   20.3 | phys err 0.0142 | units  94 | units <5 hits 0.15 <20 hits 0.65 | drift 1.357 | end gen 0.044 real 0.040
+md-exact-diag        seed 999 step   2000 ep   83 | return   45.7 | phys err 0.0130 | units  91 | units <5 hits 0.21 <20 hits 0.60 | drift 0.863 | end gen 0.028 real 0.042
+md-exact-diag-bern   seed 997 step   2000 ep   96 | return    9.2 | phys err 0.0107 | units  82 | units <5 hits 0.13 <20 hits 0.62 | drift 0.860 | end gen 0.046 real 0.048
+md-fixed-diag        seed 998 step   2000 ep   67 | return   66.3 | phys err 0.0180 | units  86 | units <5 hits 0.15 <20 hits 0.62 | drift 1.096 | end gen 0.057 real 0.034
+md-exact-diag        seed 998 step   2000 ep   74 | return   83.6 | phys err 0.0155 | units  94 | units <5 hits 0.22 <20 hits 0.56 | drift 1.066 | end gen 0.024 real 0.037
+md-exact-diag-bern   seed 999 step   2000 ep   78 | return   38.3 | phys err 0.0121 | units  93 | units <5 hits 0.19 <20 hits 0.55 | drift 1.842 | end gen 0.030 real 0.039
+md-exact-diag        seed 997 step   2000 ep   93 | return   18.7 | phys err 0.0103 | units  89 | units <5 hits 0.18 <20 hits 0.62 | drift 1.466 | end gen 0.043 real 0.046
+/home/pujan/.virtualenvs/rlsom/lib/python3.12/site-packages/gymnasium/envs/classic_control/cartpole.py:215: UserWarning: [33mWARN: You are calling 'step()' even though this environment has already returned terminated = True. You should always call 'reset()' once you receive 'terminated = True' -- any further steps are undefined behavior.[0m
+  logger.warn(
+md-exact-diag-bern   seed 998 step   1000 ep   44 | return    9.6 | phys err 0.0095 | units  88 | units <5 hits 0.38 <20 hits 0.78 | drift 0.941 | end gen 0.031 real 0.044
+md-exact-diag-bern   seed 998 step   2000 ep   76 | return   36.6 | phys err 0.0139 | units  97 | units <5 hits 0.11 <20 hits 0.62 | drift 1.354 | end gen 0.035 real 0.038
+md-exact-diag        seed 999 step   5000 ep  147 | return   60.9 | phys err 0.0206 | units  98 | units <5 hits 0.11 <20 hits 0.20 | drift 1.230 | end gen 0.023 real 0.020
+md-fixed-diag        seed 997 step   5000 ep  161 | return   83.7 | phys err 0.0064 | units  96 | units <5 hits 0.03 <20 hits 0.18 | drift 1.154 | end gen 0.054 real 0.018
+md-exact-diag        seed 998 step   5000 ep  137 | return   75.8 | phys err 0.0155 | units  99 | units <5 hits 0.06 <20 hits 0.14 | drift 1.086 | end gen 0.017 real 0.021
+md-fixed-diag        seed 999 step   5000 ep  133 | return  328.0 | phys err 0.0088 | units  97 | units <5 hits 0.07 <20 hits 0.16 | drift 0.893 | end gen 0.021 real 0.012
+md-exact-diag-bern   seed 997 step   5000 ep  162 | return  129.2 | phys err 0.0090 | units  95 | units <5 hits 0.08 <20 hits 0.19 | drift 1.013 | end gen 0.029 real 0.018
+md-exact-diag-bern   seed 999 step   5000 ep  143 | return  112.7 | phys err 0.0162 | units  97 | units <5 hits 0.10 <20 hits 0.23 | drift 1.182 | end gen 0.029 real 0.019
+md-exact-diag        seed 997 step   5000 ep  196 | return   36.6 | phys err 0.0120 | units  97 | units <5 hits 0.04 <20 hits 0.14 | drift 1.156 | end gen 0.034 real 0.034
+md-fixed-diag        seed 998 step   5000 ep  138 | return  135.8 | phys err 0.0116 | units  93 | units <5 hits 0.09 <20 hits 0.22 | drift 1.440 | end gen 0.021 real 0.017
+md-exact-diag-bern   seed 998 step   5000 ep  149 | return   51.2 | phys err 0.0152 | units  99 | units <5 hits 0.10 <20 hits 0.20 | drift 0.923 | end gen 0.037 real 0.023
+md-exact-diag        seed 999 step  10000 ep  216 | return  102.4 | phys err 0.0158 | units 100 | units <5 hits 0.08 <20 hits 0.13 | drift 1.306 | end gen 0.019 real 0.011
+md-exact-diag        seed 998 step  10000 ep  195 | return  117.8 | phys err 0.0157 | units  99 | units <5 hits 0.03 <20 hits 0.08 | drift 0.970 | end gen 0.015 real 0.009
+md-fixed-diag        seed 999 step  10000 ep  182 | return  168.6 | phys err 0.0048 | units  98 | units <5 hits 0.02 <20 hits 0.07 | drift 0.864 | end gen 0.033 real 0.009
+md-fixed-diag        seed 997 step  10000 ep  202 | return  313.5 | phys err 0.0082 | units  98 | units <5 hits 0.02 <20 hits 0.06 | drift 1.148 | end gen 0.034 real 0.007
+md-exact-diag-bern   seed 997 step  10000 ep  208 | return  134.8 | phys err 0.0086 | units  96 | units <5 hits 0.04 <20 hits 0.09 | drift 1.539 | end gen 0.019 real 0.007
+md-exact-diag        seed 997 step  10000 ep  299 | return  137.9 | phys err 0.0130 | units  97 | units <5 hits 0.03 <20 hits 0.08 | drift 1.334 | end gen 0.042 real 0.008
+md-exact-diag-bern   seed 999 step  10000 ep  202 | return  199.9 | phys err 0.0136 | units  99 | units <5 hits 0.07 <20 hits 0.17 | drift 1.660 | end gen 0.017 real 0.009
+md-exact-diag-bern   seed 998 step  10000 ep  216 | return   71.0 | phys err 0.0183 | units 100 | units <5 hits 0.04 <20 hits 0.13 | drift 1.150 | end gen 0.025 real 0.011
+md-fixed-diag        seed 998 step  10000 ep  172 | return  276.6 | phys err 0.0066 | units  95 | units <5 hits 0.04 <20 hits 0.12 | drift 1.034 | end gen 0.032 real 0.005
+md-exact-diag        seed 999 step  25000 ep  320 | return  272.1 | phys err 0.0138 | units 100 | units <5 hits 0.04 <20 hits 0.07 | drift 0.913 | end gen 0.013 real 0.006
+md-fixed-diag        seed 999 step  25000 ep  255 | return  150.4 | phys err 0.0051 | units 100 | units <5 hits 0.01 <20 hits 0.06 | drift 1.007 | end gen 0.051 real 0.004
+md-exact-diag        seed 998 step  25000 ep  312 | return   93.0 | phys err 0.0130 | units  99 | units <5 hits 0.02 <20 hits 0.05 | drift 0.943 | end gen 0.011 real 0.006
+md-fixed-diag        seed 997 step  25000 ep  279 | return  322.3 | phys err 0.0049 | units  99 | units <5 hits 0.00 <20 hits 0.03 | drift 0.960 | end gen 0.024 real 0.004
+md-exact-diag-bern   seed 997 step  25000 ep  307 | return  192.9 | phys err 0.0115 | units  98 | units <5 hits 0.02 <20 hits 0.07 | drift 1.108 | end gen 0.027 real 0.004
+md-exact-diag        seed 997 step  25000 ep  385 | return   57.5 | phys err 0.0119 | units  97 | units <5 hits 0.01 <20 hits 0.05 | drift 1.220 | end gen 0.024 real 0.004
+md-exact-diag-bern   seed 999 step  25000 ep  269 | return  500.0 | phys err 0.0146 | units 100 | units <5 hits 0.03 <20 hits 0.07 | drift 0.979 | end gen 0.014 real 0.002
+md-exact-diag-bern   seed 998 step  25000 ep  347 | return  185.6 | phys err 0.0127 | units 100 | units <5 hits 0.03 <20 hits 0.07 | drift 1.181 | end gen 0.025 real 0.004
+md-fixed-diag        seed 998 step  25000 ep  243 | return  500.0 | phys err 0.0123 | units  96 | units <5 hits 0.02 <20 hits 0.06 | drift 0.823 | end gen 0.009 real 0.001

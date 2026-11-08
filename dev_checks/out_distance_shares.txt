@@ -1,0 +1,11 @@
+random pairs state      weight^2 sum  8.58 share  54.6%
+random pairs action     weight^2 sum  0.16 share   1.9%
+random pairs reward     weight^2 sum  0.02 share   0.0%
+random pairs next state weight^2 sum  5.49 share  41.4%
+random pairs done       weight^2 sum  1.00 share   2.1%
+closest 5% state      share  60.4%
+closest 5% action     share   0.0%
+closest 5% reward     share   0.0%
+closest 5% next state share  39.6%
+closest 5% done       share   0.0%
+raw SD: [0.104 0.537 0.093 0.783 0.5   0.    0.111 0.573 0.104 0.854 0.207] done rate 0.045

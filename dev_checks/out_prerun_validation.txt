@@ -1,0 +1,7 @@
+fixed: 1 hit, mean == x? True, reward 1.000
+buggy: 1 hit, mean == x? False, reward 9.000
+none: 1 hit, mean == x? False, reward 0.900
+md-fixed-diag: units hit 94, memory 3418, sample done 0.049 (data 0.046), reward [-0.88,3.30], physics err 0.0037, action purity 1.000, endings in done-units 0.00
+md-exact-diag: units hit 94, memory 3418, sample done 0.031 (data 0.046), reward [0.99,1.01], physics err 0.0053, action purity 1.000, endings in done-units 0.00
+md-fixed-full: units hit 94, memory 8918, sample done 0.048 (data 0.046), reward [-1.10,3.46], physics err 0.0026, action purity 1.000, endings in done-units 0.00
+md-exact-full: units hit 94, memory 8918, sample done 0.028 (data 0.046), reward [0.99,1.01], physics err 0.0026, action purity 1.000, endings in done-units 0.00

@@ -1,0 +1,329 @@
+== mean greedy return per checkpoint (seeds), curve = mean over checkpoints, late = mean from 100k
+arm                    n      5k    10k    25k    50k    75k   100k   150k   200k  curve   late  memory
+orig                   10   42.7  252.1  179.3  158.6  180.7  142.7  164.9  203.4  165.5  170.3  3400
+md-buggy-diag          10   47.3  211.3   80.2  196.9  175.2  255.3  264.7  228.5  182.4  249.5  3418
+md-fixed-diag          10  254.0  311.1  355.6  340.7  349.1  338.5  356.0  355.3  332.6  350.0  3418
+md-none-diag           10  189.6  240.8  250.2  366.8  409.1  360.0  352.9  257.2  303.3  323.4  3418
+md-exact-diag          10   70.4  175.2  178.9  269.3  361.3  335.1  283.1  297.6  246.4  305.3  3418
+md-fixed-full          10  130.2  271.7  239.7  275.2  280.6  259.6  323.2  398.0  272.3  326.9  8918
+md-none-full           10  157.9  326.6  244.2  280.6  244.1  310.3  321.9  381.6  283.4  338.0  8918
+md-exact-full          10  163.8  208.2  176.3  195.8  253.1  189.7  180.2  149.1  189.5  173.0  8918
+md-fixed-diag-count    10  177.1  182.6  263.8  268.9  332.4  278.6  350.8  307.0  270.2  312.1  3418
+fifo-310               10  214.2  238.1  268.1  277.4  331.7  313.1  412.3  479.1  316.8  401.5  3410
+reservoir-310          10  212.8  279.3  152.6  169.0  191.0  203.7  105.7  226.7  192.6  178.7  3410
+keep-endings-310       10  254.4  235.6  208.7  180.6  135.8   69.6   29.6   26.6  142.6   41.9  3410
+fifo-810               10  187.5  232.8  155.8  324.2  329.6  348.4  418.0  421.0  302.2  395.8  8910
+reservoir-810          10  197.8  190.7  161.7  171.6  186.7  185.6  167.6  143.5  175.6  165.5  8910
+keep-endings-810       10  299.4  288.3  173.4  232.8  248.5  210.1  172.8  185.2  226.3  189.4  8910
+fifo-10000             10  207.4  175.0  165.5  279.1  428.0  423.3  322.4  374.2  296.9  373.3  110000
+
+== SOM sample diagnostics at 200k (mean over seeds)
+orig                   units 100, done rate 0.105, reward mean 1.04 [0.70, 4.17], action-1 rate 0.48
+md-buggy-diag          units 98, done rate 0.067, reward mean 1.14 [0.21, 11.96], action-1 rate 0.53
+md-fixed-diag          units 100, done rate 0.040, reward mean 1.00 [0.85, 1.16], action-1 rate 0.50
+md-none-diag           units 99, done rate 0.046, reward mean 1.00 [0.74, 1.35], action-1 rate 0.49
+md-exact-diag          units 99, done rate 0.010, reward mean 1.00 [0.99, 1.01], action-1 rate 0.49
+md-fixed-full          units 99, done rate 0.029, reward mean 1.00 [0.37, 1.80], action-1 rate 0.50
+md-none-full           units 100, done rate 0.049, reward mean 1.00 [0.49, 1.39], action-1 rate 0.50
+md-exact-full          units 100, done rate 0.004, reward mean 1.00 [0.99, 1.01], action-1 rate 0.49
+md-fixed-diag-count    units 100, done rate 0.030, reward mean 1.00 [0.99, 1.01], action-1 rate 0.50
+
+== paired differences, score = curve
+[claim 1] md-fixed-diag - md-buggy-diag: +150.1 [+77.9, +226.5], won 9/10
+[claim 2] md-none-diag - md-fixed-diag: -29.2 [-70.2, +12.4], won 2/10
+[claim 3] md-fixed-diag - fifo-310: +15.8 [-28.8, +56.1], won 7/10
+[4      ] md-exact-diag - md-fixed-diag: -86.2 [-133.9, -38.7], won 2/10
+[4      ] md-fixed-full - md-fixed-diag: -60.3 [-97.6, -22.1], won 1/10
+[4      ] md-none-full - md-fixed-full: +11.1 [-35.0, +57.7], won 6/10
+[4      ] md-exact-full - md-fixed-full: -82.7 [-118.1, -38.3], won 2/10
+[4      ] md-buggy-diag - orig: +16.9 [-72.2, +104.2], won 6/10
+[4      ] md-fixed-diag-count - md-fixed-diag: -62.4 [-106.3, -19.8], won 2/10
+[4      ] md-fixed-full - fifo-810: -29.9 [-65.3, +10.0], won 3/10
+[4      ] orig - fifo-310: -151.2 [-215.0, -99.8], won 0/10
+[4      ] orig - reservoir-310: -27.1 [-84.8, +26.3], won 4/10
+[4      ] orig - keep-endings-310: +22.9 [-26.5, +73.8], won 5/10
+[4      ] orig - fifo-10000: -131.3 [-181.3, -88.0], won 0/10
+[4      ] md-fixed-diag - reservoir-310: +139.9 [+98.2, +181.5], won 10/10
+[4      ] md-fixed-diag - keep-endings-310: +189.9 [+140.1, +240.0], won 10/10
+[4      ] md-fixed-diag - fifo-10000: +35.7 [-11.1, +87.9], won 6/10
+[4      ] md-exact-diag - fifo-310: -70.4 [-111.5, -26.6], won 2/10
+[4      ] md-exact-diag - reservoir-310: +53.8 [+10.2, +103.3], won 8/10
+[4      ] md-exact-diag - keep-endings-310: +103.8 [+43.3, +160.9], won 9/10
+[4      ] md-exact-diag - fifo-10000: -50.5 [-78.4, -21.1], won 1/10
+[4      ] md-fixed-full - reservoir-810: +96.6 [+59.0, +130.8], won 9/10
+[4      ] md-fixed-full - keep-endings-810: +46.0 [+2.9, +92.2], won 8/10
+[4      ] md-fixed-full - fifo-10000: -24.6 [-69.0, +21.3], won 4/10
+[4      ] md-exact-full - fifo-810: -112.6 [-151.4, -72.4], won 0/10
+[4      ] md-exact-full - reservoir-810: +13.9 [-14.1, +47.3], won 6/10
+[4      ] md-exact-full - keep-endings-810: -36.8 [-75.5, +7.2], won 2/10
+[4      ] md-exact-full - fifo-10000: -107.3 [-145.6, -69.4], won 0/10
+
+== paired differences, score = late
+[claim 1] md-fixed-diag - md-buggy-diag: +100.5 [-10.9, +211.5], won 6/10
+[claim 2] md-none-diag - md-fixed-diag: -26.6 [-100.7, +50.1], won 3/10
+[claim 3] md-fixed-diag - fifo-310: -51.6 [-111.1, +0.7], won 4/10
+[4      ] md-exact-diag - md-fixed-diag: -44.7 [-117.2, +35.2], won 3/10
+[4      ] md-fixed-full - md-fixed-diag: -23.0 [-70.1, +30.6], won 3/10
+[4      ] md-none-full - md-fixed-full: +11.0 [-78.2, +101.7], won 5/10
+[4      ] md-exact-full - md-fixed-full: -153.9 [-225.7, -89.0], won 0/10
+[4      ] md-buggy-diag - orig: +79.2 [-57.9, +214.8], won 6/10
+[4      ] md-fixed-diag-count - md-fixed-diag: -37.8 [-121.8, +49.9], won 5/10
+[4      ] md-fixed-full - fifo-810: -68.9 [-150.8, +16.0], won 3/10
+[4      ] orig - fifo-310: -231.2 [-310.8, -165.4], won 0/10
+[4      ] orig - reservoir-310: -8.4 [-78.0, +63.7], won 4/10
+[4      ] orig - keep-endings-310: +128.4 [+68.1, +186.5], won 8/10
+[4      ] orig - fifo-10000: -203.0 [-288.4, -117.6], won 1/10
+[4      ] md-fixed-diag - reservoir-310: +171.3 [+101.5, +242.2], won 9/10
+[4      ] md-fixed-diag - keep-endings-310: +308.0 [+264.1, +353.2], won 10/10
+[4      ] md-fixed-diag - fifo-10000: -23.4 [-107.5, +77.6], won 4/10
+[4      ] md-exact-diag - fifo-310: -96.3 [-162.1, -35.4], won 1/10
+[4      ] md-exact-diag - reservoir-310: +126.6 [+56.2, +202.7], won 9/10
+[4      ] md-exact-diag - keep-endings-310: +263.3 [+202.8, +328.3], won 10/10
+[4      ] md-exact-diag - fifo-10000: -68.1 [-142.2, +0.5], won 4/10
+[4      ] md-fixed-full - reservoir-810: +161.4 [+73.1, +240.9], won 8/10
+[4      ] md-fixed-full - keep-endings-810: +137.6 [+65.9, +214.7], won 9/10
+[4      ] md-fixed-full - fifo-10000: -46.4 [-140.1, +63.5], won 3/10
+[4      ] md-exact-full - fifo-810: -222.8 [-290.0, -153.5], won 0/10
+[4      ] md-exact-full - reservoir-810: +7.5 [-53.1, +68.7], won 5/10
+[4      ] md-exact-full - keep-endings-810: -16.4 [-91.3, +54.6], won 5/10
+[4      ] md-exact-full - fifo-10000: -200.3 [-255.0, -138.3], won 0/10
+
+== paired differences, score = 5000
+[claim 1] md-fixed-diag - md-buggy-diag: +206.8 [+125.6, +292.8], won 9/10
+[claim 2] md-none-diag - md-fixed-diag: -64.4 [-144.5, +22.8], won 2/10
+[claim 3] md-fixed-diag - fifo-310: +39.9 [-67.5, +147.8], won 5/10
+[4      ] md-exact-diag - md-fixed-diag: -183.6 [-268.6, -103.3], won 0/10
+[4      ] md-fixed-full - md-fixed-diag: -123.8 [-216.8, -36.1], won 2/10
+[4      ] md-none-full - md-fixed-full: +27.7 [-9.5, +61.7], won 6/10
+[4      ] md-exact-full - md-fixed-full: +33.6 [-4.9, +74.4], won 6/10
+[4      ] md-buggy-diag - orig: +4.6 [-31.4, +39.9], won 6/10
+[4      ] md-fixed-diag-count - md-fixed-diag: -76.9 [-162.1, -0.0], won 2/10
+[4      ] md-fixed-full - fifo-810: -57.3 [-88.6, -26.0], won 1/10
+[4      ] orig - fifo-310: -171.5 [-224.4, -119.5], won 0/10
+[4      ] orig - reservoir-310: -170.2 [-250.2, -96.9], won 1/10
+[4      ] orig - keep-endings-310: -211.8 [-301.9, -134.5], won 0/10
+[4      ] orig - fifo-10000: -164.8 [-193.0, -138.5], won 0/10
+[4      ] md-fixed-diag - reservoir-310: +41.2 [-34.5, +126.3], won 8/10
+[4      ] md-fixed-diag - keep-endings-310: -0.4 [-105.9, +100.6], won 6/10
+[4      ] md-fixed-diag - fifo-10000: +46.6 [-35.7, +137.0], won 5/10
+[4      ] md-exact-diag - fifo-310: -143.8 [-182.6, -106.5], won 0/10
+[4      ] md-exact-diag - reservoir-310: -142.4 [-223.0, -73.0], won 0/10
+[4      ] md-exact-diag - keep-endings-310: -184.0 [-265.0, -116.2], won 0/10
+[4      ] md-exact-diag - fifo-10000: -137.0 [-158.3, -118.5], won 0/10
+[4      ] md-fixed-full - reservoir-810: -67.6 [-101.2, -32.5], won 2/10
+[4      ] md-fixed-full - keep-endings-810: -169.2 [-234.1, -107.0], won 0/10
+[4      ] md-fixed-full - fifo-10000: -77.2 [-109.4, -43.6], won 1/10
+[4      ] md-exact-full - fifo-810: -23.6 [-59.1, +13.7], won 4/10
+[4      ] md-exact-full - reservoir-810: -33.9 [-54.6, -16.0], won 1/10
+[4      ] md-exact-full - keep-endings-810: -135.5 [-208.7, -69.2], won 1/10
+[4      ] md-exact-full - fifo-10000: -43.6 [-76.9, -7.1], won 3/10
+
+== paired differences, score = 10000
+[claim 1] md-fixed-diag - md-buggy-diag: +99.8 [-12.7, +216.1], won 7/10
+[claim 2] md-none-diag - md-fixed-diag: -70.3 [-166.9, +19.1], won 4/10
+[claim 3] md-fixed-diag - fifo-310: +73.0 [+1.6, +141.3], won 7/10
+[4      ] md-exact-diag - md-fixed-diag: -135.9 [-229.0, -35.7], won 1/10
+[4      ] md-fixed-full - md-fixed-diag: -39.4 [-142.3, +71.6], won 4/10
+[4      ] md-none-full - md-fixed-full: +54.9 [-80.7, +187.8], won 6/10
+[4      ] md-exact-full - md-fixed-full: -63.5 [-152.6, +16.0], won 2/10
+[4      ] md-buggy-diag - orig: -40.8 [-187.8, +100.9], won 5/10
+[4      ] md-fixed-diag-count - md-fixed-diag: -128.5 [-222.1, -38.4], won 2/10
+[4      ] md-fixed-full - fifo-810: +38.9 [-29.1, +105.9], won 7/10
+[4      ] orig - fifo-310: +14.0 [-106.2, +142.0], won 5/10
+[4      ] orig - reservoir-310: -27.2 [-161.0, +110.3], won 3/10
+[4      ] orig - keep-endings-310: +16.6 [-57.9, +106.7], won 5/10
+[4      ] orig - fifo-10000: +77.1 [-28.4, +186.8], won 8/10
+[4      ] md-fixed-diag - reservoir-310: +31.8 [-99.1, +159.2], won 6/10
+[4      ] md-fixed-diag - keep-endings-310: +75.6 [-34.7, +176.2], won 8/10
+[4      ] md-fixed-diag - fifo-10000: +136.1 [+77.2, +195.0], won 9/10
+[4      ] md-exact-diag - fifo-310: -62.9 [-146.3, +27.5], won 2/10
+[4      ] md-exact-diag - reservoir-310: -104.1 [-201.5, -10.1], won 3/10
+[4      ] md-exact-diag - keep-endings-310: -60.3 [-190.2, +61.6], won 4/10
+[4      ] md-exact-diag - fifo-10000: +0.2 [-64.7, +77.0], won 3/10
+[4      ] md-fixed-full - reservoir-810: +81.0 [-49.2, +202.5], won 6/10
+[4      ] md-fixed-full - keep-endings-810: -16.6 [-98.7, +56.2], won 4/10
+[4      ] md-fixed-full - fifo-10000: +96.7 [+10.5, +193.4], won 6/10
+[4      ] md-exact-full - fifo-810: -24.6 [-76.0, +28.6], won 3/10
+[4      ] md-exact-full - reservoir-810: +17.5 [-74.2, +117.6], won 5/10
+[4      ] md-exact-full - keep-endings-810: -80.0 [-192.9, +41.2], won 2/10
+[4      ] md-exact-full - fifo-10000: +33.2 [-31.8, +116.8], won 6/10
+
+== paired differences, score = 25000
+[claim 1] md-fixed-diag - md-buggy-diag: +275.4 [+168.0, +374.6], won 9/10
+[claim 2] md-none-diag - md-fixed-diag: -105.4 [-224.6, +23.7], won 4/10
+[claim 3] md-fixed-diag - fifo-310: +87.5 [-32.8, +206.6], won 6/10
+[4      ] md-exact-diag - md-fixed-diag: -176.7 [-283.3, -58.7], won 2/10
+[4      ] md-fixed-full - md-fixed-diag: -115.9 [-243.3, +21.6], won 4/10
+[4      ] md-none-full - md-fixed-full: +4.5 [-113.4, +110.1], won 6/10
+[4      ] md-exact-full - md-fixed-full: -63.4 [-158.3, +20.5], won 4/10
+[4      ] md-buggy-diag - orig: -99.1 [-222.7, +22.3], won 3/10
+[4      ] md-fixed-diag-count - md-fixed-diag: -91.8 [-238.5, +56.0], won 5/10
+[4      ] md-fixed-full - fifo-810: +83.8 [+29.2, +151.8], won 9/10
+[4      ] orig - fifo-310: -88.8 [-212.6, +40.6], won 2/10
+[4      ] orig - reservoir-310: +26.6 [-68.4, +116.2], won 5/10
+[4      ] orig - keep-endings-310: -29.5 [-145.3, +102.5], won 3/10
+[4      ] orig - fifo-10000: +13.7 [-86.5, +126.2], won 5/10
+[4      ] md-fixed-diag - reservoir-310: +203.0 [+81.9, +316.4], won 7/10
+[4      ] md-fixed-diag - keep-endings-310: +146.8 [-13.0, +298.2], won 7/10
+[4      ] md-fixed-diag - fifo-10000: +190.0 [+94.0, +287.1], won 9/10
+[4      ] md-exact-diag - fifo-310: -89.2 [-169.4, -19.4], won 2/10
+[4      ] md-exact-diag - reservoir-310: +26.3 [-28.1, +78.0], won 6/10
+[4      ] md-exact-diag - keep-endings-310: -29.8 [-131.3, +67.0], won 6/10
+[4      ] md-exact-diag - fifo-10000: +13.4 [-47.2, +83.1], won 3/10
+[4      ] md-fixed-full - reservoir-810: +77.9 [-9.8, +172.4], won 6/10
+[4      ] md-fixed-full - keep-endings-810: +66.3 [-27.3, +174.5], won 7/10
+[4      ] md-fixed-full - fifo-10000: +74.2 [-11.1, +168.6], won 6/10
+[4      ] md-exact-full - fifo-810: +20.4 [-22.2, +76.0], won 4/10
+[4      ] md-exact-full - reservoir-810: +14.5 [-48.7, +90.5], won 4/10
+[4      ] md-exact-full - keep-endings-810: +2.9 [-52.5, +58.3], won 5/10
+[4      ] md-exact-full - fifo-10000: +10.7 [-33.9, +68.2], won 6/10
+
+== paired differences, score = 50000
+[claim 1] md-fixed-diag - md-buggy-diag: +143.8 [-26.8, +305.3], won 7/10
+[claim 2] md-none-diag - md-fixed-diag: +26.1 [-121.5, +176.2], won 5/10
+[claim 3] md-fixed-diag - fifo-310: +63.4 [-46.7, +186.7], won 4/10
+[4      ] md-exact-diag - md-fixed-diag: -71.4 [-193.2, +62.6], won 3/10
+[4      ] md-fixed-full - md-fixed-diag: -65.5 [-205.0, +91.9], won 2/10
+[4      ] md-none-full - md-fixed-full: +5.4 [-135.6, +150.4], won 4/10
+[4      ] md-exact-full - md-fixed-full: -79.4 [-196.5, +47.1], won 2/10
+[4      ] md-buggy-diag - orig: +38.4 [-113.4, +190.9], won 4/10
+[4      ] md-fixed-diag-count - md-fixed-diag: -71.9 [-211.3, +78.7], won 3/10
+[4      ] md-fixed-full - fifo-810: -49.0 [-209.3, +124.2], won 3/10
+[4      ] orig - fifo-310: -118.8 [-246.3, +9.3], won 2/10
+[4      ] orig - reservoir-310: -10.4 [-122.8, +87.3], won 6/10
+[4      ] orig - keep-endings-310: -22.0 [-88.4, +42.6], won 4/10
+[4      ] orig - fifo-10000: -120.5 [-249.6, +14.0], won 3/10
+[4      ] md-fixed-diag - reservoir-310: +171.7 [+8.8, +311.2], won 8/10
+[4      ] md-fixed-diag - keep-endings-310: +160.1 [+20.6, +292.2], won 6/10
+[4      ] md-fixed-diag - fifo-10000: +61.7 [-99.2, +205.7], won 6/10
+[4      ] md-exact-diag - fifo-310: -8.1 [-167.3, +151.8], won 4/10
+[4      ] md-exact-diag - reservoir-310: +100.3 [-52.4, +245.7], won 7/10
+[4      ] md-exact-diag - keep-endings-310: +88.7 [+17.0, +177.1], won 6/10
+[4      ] md-exact-diag - fifo-10000: -9.7 [-115.0, +105.5], won 4/10
+[4      ] md-fixed-full - reservoir-810: +103.7 [+11.8, +197.6], won 6/10
+[4      ] md-fixed-full - keep-endings-810: +42.4 [-108.1, +186.6], won 6/10
+[4      ] md-fixed-full - fifo-10000: -3.8 [-138.6, +123.9], won 5/10
+[4      ] md-exact-full - fifo-810: -128.4 [-268.6, +27.1], won 2/10
+[4      ] md-exact-full - reservoir-810: +24.2 [-63.1, +123.0], won 4/10
+[4      ] md-exact-full - keep-endings-810: -37.0 [-164.6, +87.4], won 3/10
+[4      ] md-exact-full - fifo-10000: -83.2 [-221.5, +54.4], won 4/10
+
+== paired differences, score = 75000
+[claim 1] md-fixed-diag - md-buggy-diag: +173.9 [+37.5, +308.7], won 8/10
+[claim 2] md-none-diag - md-fixed-diag: +60.0 [-49.3, +170.6], won 5/10
+[claim 3] md-fixed-diag - fifo-310: +17.4 [-106.0, +142.4], won 4/10
+[4      ] md-exact-diag - md-fixed-diag: +12.2 [-129.4, +161.7], won 3/10
+[4      ] md-fixed-full - md-fixed-diag: -68.5 [-219.8, +92.3], won 4/10
+[4      ] md-none-full - md-fixed-full: -36.5 [-172.0, +100.9], won 4/10
+[4      ] md-exact-full - md-fixed-full: -27.5 [-131.4, +71.6], won 6/10
+[4      ] md-buggy-diag - orig: -5.6 [-128.1, +122.4], won 4/10
+[4      ] md-fixed-diag-count - md-fixed-diag: -16.7 [-156.4, +114.8], won 4/10
+[4      ] md-fixed-full - fifo-810: -49.0 [-148.3, +46.5], won 3/10
+[4      ] orig - fifo-310: -150.9 [-260.0, -43.8], won 2/10
+[4      ] orig - reservoir-310: -10.3 [-157.9, +127.5], won 4/10
+[4      ] orig - keep-endings-310: +44.9 [-65.5, +136.8], won 7/10
+[4      ] orig - fifo-10000: -247.3 [-328.6, -155.5], won 1/10
+[4      ] md-fixed-diag - reservoir-310: +158.1 [-8.9, +297.5], won 8/10
+[4      ] md-fixed-diag - keep-endings-310: +213.3 [+107.3, +314.4], won 8/10
+[4      ] md-fixed-diag - fifo-10000: -78.9 [-194.9, +32.3], won 3/10
+[4      ] md-exact-diag - fifo-310: +29.6 [-67.4, +127.3], won 4/10
+[4      ] md-exact-diag - reservoir-310: +170.3 [+57.7, +283.6], won 7/10
+[4      ] md-exact-diag - keep-endings-310: +225.5 [+51.3, +362.5], won 8/10
+[4      ] md-exact-diag - fifo-10000: -66.7 [-178.5, +33.0], won 3/10
+[4      ] md-fixed-full - reservoir-810: +93.9 [+20.8, +165.1], won 6/10
+[4      ] md-fixed-full - keep-endings-810: +32.1 [-121.5, +189.9], won 5/10
+[4      ] md-fixed-full - fifo-10000: -147.4 [-242.4, -52.9], won 1/10
+[4      ] md-exact-full - fifo-810: -76.5 [-172.9, +24.2], won 3/10
+[4      ] md-exact-full - reservoir-810: +66.4 [-26.5, +169.3], won 5/10
+[4      ] md-exact-full - keep-endings-810: +4.6 [-119.5, +138.2], won 3/10
+[4      ] md-exact-full - fifo-10000: -174.9 [-293.1, -55.3], won 1/10
+
+== paired differences, score = 100000
+[claim 1] md-fixed-diag - md-buggy-diag: +83.2 [-88.6, +251.7], won 6/10
+[claim 2] md-none-diag - md-fixed-diag: +21.5 [-67.1, +133.8], won 4/10
+[claim 3] md-fixed-diag - fifo-310: +25.4 [-130.6, +169.6], won 6/10
+[4      ] md-exact-diag - md-fixed-diag: -3.4 [-117.9, +116.3], won 3/10
+[4      ] md-fixed-full - md-fixed-diag: -78.9 [-200.8, +52.0], won 3/10
+[4      ] md-none-full - md-fixed-full: +50.7 [-31.6, +138.3], won 5/10
+[4      ] md-exact-full - md-fixed-full: -69.9 [-190.1, +53.8], won 3/10
+[4      ] md-buggy-diag - orig: +112.6 [-45.9, +272.7], won 6/10
+[4      ] md-fixed-diag-count - md-fixed-diag: -59.9 [-180.2, +62.7], won 4/10
+[4      ] md-fixed-full - fifo-810: -88.8 [-232.2, +60.1], won 4/10
+[4      ] orig - fifo-310: -170.4 [-310.5, -35.4], won 3/10
+[4      ] orig - reservoir-310: -61.0 [-185.8, +66.5], won 4/10
+[4      ] orig - keep-endings-310: +73.0 [+6.9, +150.0], won 6/10
+[4      ] orig - fifo-10000: -280.6 [-383.5, -163.3], won 1/10
+[4      ] md-fixed-diag - reservoir-310: +134.8 [-61.0, +305.8], won 7/10
+[4      ] md-fixed-diag - keep-endings-310: +268.9 [+184.7, +349.5], won 10/10
+[4      ] md-fixed-diag - fifo-10000: -84.8 [-222.8, +62.3], won 2/10
+[4      ] md-exact-diag - fifo-310: +22.0 [-92.9, +138.3], won 5/10
+[4      ] md-exact-diag - reservoir-310: +131.5 [-42.0, +288.2], won 7/10
+[4      ] md-exact-diag - keep-endings-310: +265.5 [+180.5, +351.2], won 10/10
+[4      ] md-exact-diag - fifo-10000: -88.1 [-178.9, -1.7], won 2/10
+[4      ] md-fixed-full - reservoir-810: +74.0 [-7.1, +141.8], won 8/10
+[4      ] md-fixed-full - keep-endings-810: +49.5 [-95.2, +178.0], won 7/10
+[4      ] md-fixed-full - fifo-10000: -163.7 [-293.9, -29.5], won 2/10
+[4      ] md-exact-full - fifo-810: -158.7 [-283.2, -32.3], won 4/10
+[4      ] md-exact-full - reservoir-810: +4.2 [-93.4, +122.3], won 4/10
+[4      ] md-exact-full - keep-endings-810: -20.4 [-128.8, +95.0], won 5/10
+[4      ] md-exact-full - fifo-10000: -233.6 [-329.5, -130.8], won 1/10
+
+== paired differences, score = 150000
+[claim 1] md-fixed-diag - md-buggy-diag: +91.4 [-65.2, +246.8], won 6/10
+[claim 2] md-none-diag - md-fixed-diag: -3.1 [-118.8, +116.9], won 4/10
+[claim 3] md-fixed-diag - fifo-310: -56.3 [-176.4, +64.8], won 3/10
+[4      ] md-exact-diag - md-fixed-diag: -72.9 [-202.1, +65.2], won 3/10
+[4      ] md-fixed-full - md-fixed-diag: -32.9 [-187.2, +123.5], won 5/10
+[4      ] md-none-full - md-fixed-full: -1.3 [-172.5, +181.0], won 4/10
+[4      ] md-exact-full - md-fixed-full: -143.0 [-261.3, -24.2], won 3/10
+[4      ] md-buggy-diag - orig: +99.8 [-29.7, +227.6], won 6/10
+[4      ] md-fixed-diag-count - md-fixed-diag: -5.2 [-143.5, +127.3], won 5/10
+[4      ] md-fixed-full - fifo-810: -94.8 [-243.8, +67.3], won 3/10
+[4      ] orig - fifo-310: -247.4 [-333.9, -160.7], won 0/10
+[4      ] orig - reservoir-310: +59.2 [-2.0, +126.1], won 7/10
+[4      ] orig - keep-endings-310: +135.3 [+72.5, +206.0], won 8/10
+[4      ] orig - fifo-10000: -157.5 [-289.0, -35.5], won 3/10
+[4      ] md-fixed-diag - reservoir-310: +250.4 [+174.3, +323.2], won 10/10
+[4      ] md-fixed-diag - keep-endings-310: +326.4 [+223.7, +419.2], won 10/10
+[4      ] md-fixed-diag - fifo-10000: +33.6 [-137.7, +202.2], won 5/10
+[4      ] md-exact-diag - fifo-310: -129.2 [-249.4, +3.3], won 2/10
+[4      ] md-exact-diag - reservoir-310: +177.4 [+85.2, +276.2], won 9/10
+[4      ] md-exact-diag - keep-endings-310: +253.5 [+186.0, +328.4], won 10/10
+[4      ] md-exact-diag - fifo-10000: -39.3 [-149.4, +71.1], won 5/10
+[4      ] md-fixed-full - reservoir-810: +155.6 [+10.0, +293.0], won 7/10
+[4      ] md-fixed-full - keep-endings-810: +150.3 [-5.9, +302.8], won 7/10
+[4      ] md-fixed-full - fifo-10000: +0.7 [-137.3, +141.7], won 3/10
+[4      ] md-exact-full - fifo-810: -237.8 [-309.1, -163.0], won 0/10
+[4      ] md-exact-full - reservoir-810: +12.6 [-66.0, +85.1], won 6/10
+[4      ] md-exact-full - keep-endings-810: +7.3 [-82.2, +93.9], won 6/10
+[4      ] md-exact-full - fifo-10000: -142.3 [-265.8, -29.0], won 5/10
+
+== paired differences, score = 200000
+[claim 1] md-fixed-diag - md-buggy-diag: +126.8 [+24.1, +225.0], won 6/10
+[claim 2] md-none-diag - md-fixed-diag: -98.1 [-226.6, +30.0], won 3/10
+[claim 3] md-fixed-diag - fifo-310: -123.8 [-201.6, -50.6], won 0/10
+[4      ] md-exact-diag - md-fixed-diag: -57.8 [-197.4, +80.6], won 5/10
+[4      ] md-fixed-full - md-fixed-diag: +42.7 [-21.5, +111.9], won 5/10
+[4      ] md-none-full - md-fixed-full: -16.4 [-168.2, +138.1], won 5/10
+[4      ] md-exact-full - md-fixed-full: -248.9 [-335.9, -152.8], won 1/10
+[4      ] md-buggy-diag - orig: +25.1 [-139.9, +183.4], won 5/10
+[4      ] md-fixed-diag-count - md-fixed-diag: -48.4 [-186.1, +90.0], won 5/10
+[4      ] md-fixed-full - fifo-810: -23.0 [-102.5, +63.5], won 1/10
+[4      ] orig - fifo-310: -275.7 [-366.0, -185.4], won 0/10
+[4      ] orig - reservoir-310: -23.3 [-115.2, +58.3], won 5/10
+[4      ] orig - keep-endings-310: +176.9 [+84.0, +276.1], won 9/10
+[4      ] orig - fifo-10000: -170.8 [-274.6, -39.2], won 1/10
+[4      ] md-fixed-diag - reservoir-310: +128.6 [+32.6, +237.5], won 7/10
+[4      ] md-fixed-diag - keep-endings-310: +328.8 [+257.6, +401.8], won 10/10
+[4      ] md-fixed-diag - fifo-10000: -18.9 [-131.0, +102.4], won 3/10
+[4      ] md-exact-diag - fifo-310: -181.6 [-295.1, -57.8], won 1/10
+[4      ] md-exact-diag - reservoir-310: +70.8 [-70.3, +204.9], won 7/10
+[4      ] md-exact-diag - keep-endings-310: +271.0 [+163.0, +378.1], won 9/10
+[4      ] md-exact-diag - fifo-10000: -76.7 [-207.1, +56.6], won 3/10
+[4      ] md-fixed-full - reservoir-810: +254.5 [+128.0, +366.0], won 8/10
+[4      ] md-fixed-full - keep-endings-810: +212.8 [+54.3, +363.5], won 7/10
+[4      ] md-fixed-full - fifo-10000: +23.8 [-86.6, +147.0], won 4/10
+[4      ] md-exact-full - fifo-810: -271.9 [-367.4, -169.9], won 0/10
+[4      ] md-exact-full - reservoir-810: +5.6 [-80.7, +101.6], won 5/10
+[4      ] md-exact-full - keep-endings-810: -36.1 [-159.3, +71.4], won 6/10
+[4      ] md-exact-full - fifo-10000: -225.2 [-323.0, -126.2], won 1/10

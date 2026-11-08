@@ -1,0 +1,8 @@
+defaults identical
+{'averaging': 'exact'} identical
+{'covariance': 'full'} identical
+{'correction': 'buggy'} identical
+{'unit_choice': 'count'} identical
+{'averaging': 'exact', 'done_decode': 'bernoulli'} identical
+{'averaging': 'hybrid', 'done_decode': 'bernoulli'} identical
+{'averaging': 'hybrid', 'kappa_min': 0.5, 'min_hits': 20} identical

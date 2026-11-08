@@ -1,0 +1,18 @@
+== exact+Bernoulli vs FIFO 310, Studies 2-5 (seeds 110-179, 70 seeds)
+curve  : +36.0 [+20.8, +50.9], won 57/70
+late   : +23.0 [-2.6, +48.0], won 41/70
+5000   : -97.8 [-112.6, -83.2], won 3/70
+25000  : +64.2 [+24.8, +103.2], won 44/70
+50000  : +125.7 [+78.8, +171.4], won 50/70
+200000 : -12.5 [-48.6, +22.2], won 18/70
+
+== hybrid (rate 0.01) vs exact and vs FIFO, Studies 4-5 (seeds 140-179, 40 seeds)
+hybrid-bern - exact-bern [early]: +3.0 [-22.7, +27.6], won 21/40
+hybrid-bern - exact-bern [curve]: +10.9 [-10.1, +32.9], won 22/40
+hybrid-bern - exact-bern [late]: +19.9 [-11.7, +50.7], won 23/40
+hybrid-bern - fifo-310 [early]: -10.9 [-39.7, +18.4], won 16/40
+hybrid-bern - fifo-310 [curve]: +52.2 [+29.2, +74.2], won 29/40
+hybrid-bern - fifo-310 [late]: +56.3 [+29.0, +83.0], won 29/40
+exact-bern whole-run mean: 329.4 n = 70
+fifo-310 whole-run mean: 293.5 n = 70
+hybrid-bern whole-run mean: 339.9 n = 40

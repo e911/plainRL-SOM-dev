@@ -1,0 +1,3 @@
+kappa_until=0 equals exact: True True
+kappa_until=1e9 equals no limit: True True
+kappa_until=2000 differs from both (switch happened): True True

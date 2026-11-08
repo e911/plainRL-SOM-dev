@@ -1,0 +1,24 @@
+== exact+Bernoulli study arms pooled over seeds 110-139 (30 seeds)
+md-exact-diag-bern - md-fixed-diag [curve]: +32.5 [+6.6, +58.8], won 20/30
+md-exact-diag-bern - md-fixed-diag [late]: +63.6 [+19.6, +106.8], won 22/30
+md-exact-diag-bern - md-exact-diag [curve]: +54.9 [+30.0, +79.3], won 23/30
+md-exact-diag-bern - md-exact-diag [late]: +82.7 [+47.5, +115.8], won 25/30
+md-exact-diag-bern - fifo-310 [curve]: +28.8 [+7.7, +49.9], won 23/30
+md-exact-diag-bern - fifo-310 [late]: +5.1 [-36.5, +44.6], won 15/30
+md-fixed-diag - fifo-310 [curve]: -3.7 [-20.7, +13.7], won 15/30
+md-fixed-diag - fifo-310 [late]: -58.5 [-87.0, -28.6], won 7/30
+md-exact-diag - md-fixed-diag [curve]: -22.4 [-46.0, +2.6], won 7/30
+md-exact-diag - md-fixed-diag [late]: -19.1 [-56.8, +19.5], won 12/30
+
+== alpha 0.9 SOM, exact SOM and FIFO 310 pooled over all three studies (seeds 100-139, 40 seeds)
+md-fixed-diag - fifo-310 [curve]: +1.2 [-15.3, +17.6], won 22/40
+md-fixed-diag - fifo-310 [late]: -56.8 [-82.8, -29.6], won 11/40
+md-exact-diag - md-fixed-diag [curve]: -38.4 [-61.8, -14.9], won 9/40
+md-exact-diag - md-fixed-diag [late]: -25.5 [-58.9, +9.6], won 15/40
+md-exact-diag - fifo-310 [curve]: -37.2 [-56.6, -17.6], won 12/40
+md-exact-diag - fifo-310 [late]: -82.3 [-119.9, -45.2], won 12/40
+
+== whole-run mean per study
+main (100-109) {'md-exact-diag': np.float64(246.4), 'md-fixed-diag': np.float64(332.6), 'fifo-310': np.float64(316.8)}
+alpha (110-119) {'md-exact-diag-bern': np.float64(329.3), 'md-exact-diag': np.float64(282.1), 'md-fixed-diag': np.float64(285.2), 'fifo-310': np.float64(300.2)}
+replication (120-139) {'md-exact-diag-bern': np.float64(330.4), 'md-exact-diag': np.float64(271.6), 'md-fixed-diag': np.float64(303.7), 'fifo-310': np.float64(301.6)}
